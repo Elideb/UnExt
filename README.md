@@ -39,30 +39,30 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to [http://unlicense.org]
 
-Runtime extensions
-==================
+Runtime extension methods
+=========================
 
-GameObject extension methods
-----------------------------
+GameObject
+----------
 Change a complete hierarchy to a given layer
 
     void SetLayerRecursive(int layer)
 
-LayerMask extension methods
----------------------------
+LayerMask
+---------
 LayerMask value (power of two) to layer value (binary mask with a single 1)
 
     int MaskValue()
 
-Object extension methods
-------------------------
+Object
+------
 Generic sugar
 
     T Instantiate<T>(T)
     T Instantiate<T>(T)
 
-Quaternion extension methods
-----------------------------
+Quaternion
+----------
 Sugar
 
     Quaternion Inverse()
@@ -71,8 +71,8 @@ Rotation between two rotations
 
     Quaternion RotationTo(Quaternion end)
 
-Texture2D extension methods
----------------------------
+Texture2D
+---------
 Add an outline around non-transparent areas of a texture
 
     void Outline(Color, uint)
@@ -92,8 +92,8 @@ Index to coordinates
     int GetPixelIndex(int, int)
     void GetPixelCoordinates(int idx, out int, out int)onding pixel coordinates.
 
-Transform extension methods
----------------------------
+Transform
+---------
 Sugar
 
     Vector3 PointToLocalSpace(Vector3)
@@ -106,8 +106,8 @@ Projections
     Vector3 ProjectPointInPlane(Vector3)
     Vector3 ProjectDirectionInPlane(Vector3)
 
-Vector3 extension methods
--------------------------
+Vector3
+-------
 Magnitudes and distances on basic planes.
 
     float magnitudeXZ()
@@ -149,8 +149,8 @@ Rotations
     Vector3 Rotate(Quaternion)
     Vector3 RotateAround(Vector3, Quaternion)
 
-Vector2 extension methods
--------------------------
+Vector2
+-------
 Distances in 2 dimensions.
 
     float distance(Vector2)
@@ -165,8 +165,8 @@ Sugar
 
     float Dot(Vector2)
 
-Build Helper methods
-====================
+Build Helper class
+==================
 
 BuildConfiguration
 ------------------
