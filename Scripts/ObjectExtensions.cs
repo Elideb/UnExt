@@ -5,7 +5,7 @@ namespace UnExt {
     public static class ObjectExtensions {
 
         /// <summary>
-        /// Instantiate a new Unity object, using MonoBehaviour.Instantiate.
+        /// Instantiate a new Unity object, using Object.Instantiate.
         /// </summary>
         /// <typeparam name="T">Type of the object to duplicate.</typeparam>
         /// <param name="original">Object to replicate.</param>
@@ -15,7 +15,7 @@ namespace UnExt {
         }
 
         /// <summary>
-        /// Instantiate a new Unity object, using MonoBehaviour.Instantiate.
+        /// Instantiate a new Unity object, using Object.Instantiate.
         /// </summary>
         /// <typeparam name="T">Type of the object to duplicate.</typeparam>
         /// <param name="original">Object to replicate.</param>
