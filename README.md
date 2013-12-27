@@ -1,12 +1,14 @@
 UnExt : Unity Extensions Library
 ================================
 Collection of extension methods and helpers for Unity 3D.
-Runtime extensions are defined in the namespace UnExt, while editor extensions are defined in UnExt.Editor.
+
+Runtime extensions are defined in the namespace `UnExt`, while editor extensions are defined in `UnExt.Editor`.
 Check the test scripts to get an idea of what is implemented and how to use it.
 
 License
 =======
 None. Do as you please with this.
+
 If you make improvements or add new methods, I'll gladly merge them in here,
 but you are not forced to publish them, as I am not forced to accept them.
 
@@ -65,7 +67,7 @@ Sugar
 
     Quaternion Inverse()
 
-Rotation between to rotations
+Rotation between two rotations
 
     Quaternion RotationTo(Quaternion end)
 
@@ -123,7 +125,7 @@ Magnitudes and distances on basic planes.
     float distance(Vector3)
     float sqrDistance(Vector3)
 
-Projection of the plane to arbitrary planes.
+Projection of the vector to arbitrary planes.
 
     Vector3 Project(Vector3)
     Vector3 Project(Vector3, Quaternion)
@@ -169,6 +171,7 @@ Build Helper methods
 BuildConfiguration
 ------------------
 Use this class to ease creating and reusing build configurations, plus automating copying files to new builds.
+
 Note: In order to create builds using scripts, a Unity Pro license is required (as of Unity 4.1.3).
 
 Example:
