@@ -1,5 +1,5 @@
-UnExt Unity Extensions
-======================
+UnExt : Unity Extensions Library
+================================
 Collection of extension methods and helpers for Unity 3D.
 Runtime extensions are defined in the namespace UnExt, while editor extensions are defined in UnExt.Editor.
 Check the test scripts to get an idea of what is implemented and how to use it.
@@ -43,59 +43,71 @@ Runtime extensions
 GameObject extension methods
 ----------------------------
 Change a complete hierarchy to a given layer
+
     void SetLayerRecursive(int layer)
 
 LayerMask extension methods
 ---------------------------
 LayerMask value (power of two) to layer value (binary mask with a single 1)
+
     int MaskValue()
 
 Object extension methods
 ------------------------
 Generic sugar
+
     T Instantiate<T>(T)
     T Instantiate<T>(T)
 
 Quaternion extension methods
 ----------------------------
 Sugar
+
     Quaternion Inverse()
 
 Rotation between to rotations
+
     Quaternion RotationTo(Quaternion end)
 
 Texture2D extension methods
 ---------------------------
 Add an outline around non-transparent areas of a texture
+
     void Outline(Color, uint)
     Texture2D Outlined(Color, uint)
 
 Copy a texture to a new one
+
     Texture2D CreateCopy()
 
 Clear all pixels with alpha below a given threshold
+
     void ClearAlpha(float)
     Texture2D ClearedAlpha(float)
 
 Index to coordinates
+
     int GetPixelIndex(int, int)
     void GetPixelCoordinates(int idx, out int, out int)onding pixel coordinates.
 
 Transform extension methods
 ---------------------------
 Sugar
+
     Vector3 PointToLocalSpace(Vector3)
     Vector3 PointToWorldSpace(Vector3)
     Vector3 DirectionToLocalSpace(Vector3)
     Vector3 DirectionToWorldSpace(Vector3)
 
 Projections
+
     Vector3 ProjectPointInPlane(Vector3)
     Vector3 ProjectDirectionInPlane(Vector3)
 
 Vector3 extension methods
 -------------------------
 Magnitudes and distances on basic planes.
+
     float magnitudeXZ()
     float sqrMagnitudeXZ()
     float magnitudeXY()
@@ -112,10 +124,12 @@ Magnitudes and distances on basic planes.
     float sqrDistance(Vector3)
 
 Projection of the plane to arbitrary planes.
+
     Vector3 Project(Vector3)
     Vector3 Project(Vector3, Quaternion)
 
 Magnitudes and distances on arbitrary planes.
+
     float magnitude(Vector3)
     float sqrMagnitude(Vector3)
     float distance(Vector3, Vector3)
@@ -124,24 +138,29 @@ Magnitudes and distances on arbitrary planes.
     float sqrDistance(Vector3, Vector3, Quaternion)
 
 Sugar
+
     float Dot(Vector3)
     Vector3 Cross(Vector3)
 
 Rotations
+
     Vector3 Rotate(Quaternion)
     Vector3 RotateAround(Vector3, Quaternion)
 
 Vector2 extension methods
 -------------------------
 Distances in 2 dimensions.
+
     float distance(Vector2)
     float sqrDistance(Vector2)
 
 Rotations
+
     Vector2 Rotate(Quaternion)
     Vector2 RotateAround(Vector2, Quaternion)
 
 Sugar
+
     float Dot(Vector2)
 
 Build Helper methods
@@ -153,6 +172,7 @@ Use this class to ease creating and reusing build configurations, plus automatin
 Note: In order to create builds using scripts, a Unity Pro license is required (as of Unity 4.1.3).
 
 Example:
+
     // Create a configuration with common parameters for builds.
     BuildConfiguration baseConfig = BuildConfiguration.Create()
                                                       .SetExecName( "CoolName" )
@@ -177,3 +197,4 @@ Example:
     // Retains the original exec name and auto run setting.
     baseConfig.SetTargetDir( "../../Builds/OSXUniversal" )
               .Build( BuildTarget.StandaloneOSXUniversal );
+
