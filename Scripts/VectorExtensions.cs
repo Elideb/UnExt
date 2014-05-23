@@ -247,8 +247,8 @@ namespace UnExt {
         }
 
         /// <summary>
-        /// Calculate the cross product of two vectors
-        /// (i.e. a vector pointing in the direction of the normal
+        /// Calculate the cross product of two vectors.
+        /// i.e. a vector pointing in the direction of the normal
         /// of the plane defined by both vectors, following the lowest angle between both,
         /// and of magnitude the area of the parallelogram with both vectors as its sides.
         /// </summary>
@@ -278,6 +278,39 @@ namespace UnExt {
         /// <returns>The result of rotating point around origin.</returns>
         public static Vector3 RotateAround(this Vector3 point, Vector3 origin, Quaternion angle) {
             return angle * (point - origin) + origin;
+        }
+
+        /// <summary>
+        /// Change a point's base to a reference's local space.
+        /// </summary>
+        /// <param name="point">Point to transform.</param>
+        /// <param name="refPoint">World space centre of new base.</param>
+        /// <param name="refRotation">World space rotation of new base.</param>
+        /// <returns>The position of the point in the new base.</returns>
+        public static Vector3 InverseTransformPoint(this Vector3 point, Vector3 refPoint, Quaternion refRotation) {
+            return point.RotateAround(refPoint, refRotation.Inverse()) - refPoint;
+        }
+
+        /// <summary>
+        /// Change a point's base to world space from a reference base.
+        /// </summary>
+        /// <param name="point">Point to transform.</param>
+        /// <param name="refPoint">World space centre of point's current base.</param>
+        /// <param name="refRotation">World space rotation of point's current base.</param>
+        /// <returns>The position of the point in world space.</returns>
+        public static Vector3 TransformPoint(this Vector3 point, Vector3 refPoint, Quaternion refRotation) {
+            return (point + refPoint).RotateAround(refPoint, refRotation);
+        }
+
+        /// <summary>
+        /// Calculate the angle, in degrees, between a vector and a point.
+        /// The point of reference is (0, 0, 0), with angle calculated from direction.
+        /// </summary>
+        /// <param name="direction">Direction vector. It indicates the direction from which to measure the angle.</param>
+        /// <param name="point">Point to measure the angle to.</param>
+        /// <returns>The angle from the vector to the point, in degrees, in the range [-180, 180].</returns>
+        public static float AngleTo(this Vector3 direction, Vector3 point) {
+            return Vector3.Angle(direction, point);
         }
 
         #endregion
